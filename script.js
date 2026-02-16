@@ -353,3 +353,14 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         icon.classList.remove('fa-xmark');
     });
 });
+
+// Formulario de contacto en la Home
+const contactFormMain = document.getElementById('contact-form-main');
+if (contactFormMain) {
+    contactFormMain.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = e.target.elements[0].value;
+        alert(`¡Gracias ${name}! Hemos recibido tu consulta y nos comunicaremos con vos a la brevedad.`);
+        contactFormMain.reset();
+    });
+}
