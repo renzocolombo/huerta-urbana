@@ -171,14 +171,19 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 60vh;
-    /* Reduced from 80vh */
+    height: 100vh;
+    /* Full screen height */
     display: flex;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1974');
     background-size: cover;
     background-position: center;
     text-align: left;
+}
+
+.hero-content {
+    transform: translateY(-100px);
+    /* Significant nudge up to show more background */
 }
 
 .hero-content h1 {
