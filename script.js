@@ -194,6 +194,12 @@ function addToCartFromModal() {
     closeModal();
     updateCartIcon();
     renderCart();
+
+    // Pequeño feedback visual
+    const icon = document.querySelector('.cart-icon');
+    icon.classList.add('bump');
+    setTimeout(() => icon.classList.remove('bump'), 300);
+
     toggleCart(); // Abrir carrito para mostrar progreso
 }
 

@@ -9,7 +9,27 @@
     --container-width: 1200px;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --transition-fast: 0.2s ease;
 }
+
+@keyframes bump {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bump {
+    animation: bump 0.3s ease-out;
+}
+
 
 * {
     margin: 0;
@@ -498,6 +518,12 @@ nav {
     font-family: inherit;
 }
 
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(201, 169, 110, 0.2);
+}
+
 /* Contact Section */
 .contact-section {
     padding: 6rem 0;
@@ -584,7 +610,48 @@ footer {
     font-size: 0.8rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .packs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        height: 70vh;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p,
+    .hero-content .hero-highlight {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .packs-grid,
     .process-grid,
@@ -593,12 +660,36 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .hero-content h1 {
-        font-size: 3rem;
+    .process-section,
+    .packs-section,
+    .about-section,
+    .checkout-section {
+        padding: 4rem 0;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 2rem;
     }
 
     .checkout-grid {
         grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .cart-drawer {
@@ -606,10 +697,27 @@ footer {
         right: -100%;
     }
 
+    .cart-drawer.open {
+        right: 0;
+    }
+
     .whatsapp-btn {
         bottom: 20px;
         right: 20px;
-        padding: 0.8rem 1.5rem;
-        font-size: 0.8rem;
+        left: 20px;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .whatsapp-btn span {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-subtitle {
+        font-size: 0.55rem;
     }
 }
