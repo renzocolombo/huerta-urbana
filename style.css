@@ -704,13 +704,20 @@ footer {
     .whatsapp-btn {
         bottom: 20px;
         right: 20px;
-        left: 20px;
+        left: auto;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        border-radius: 50%;
         justify-content: center;
-        padding: 1rem;
     }
 
     .whatsapp-btn span {
-        font-size: 0.9rem;
+        display: none;
+    }
+
+    .whatsapp-btn i {
+        font-size: 2rem;
     }
 
     .logo {
