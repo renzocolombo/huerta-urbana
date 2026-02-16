@@ -120,7 +120,8 @@ nav {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-color);
 }
 
@@ -129,6 +130,19 @@ nav {
     cursor: pointer;
     color: var(--text-primary);
     font-size: 1.2rem;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
 }
 
 .cart-count {
@@ -157,7 +171,8 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 80vh;
+    height: 60vh;
+    /* Reduced from 80vh */
     display: flex;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1974');
@@ -193,7 +208,14 @@ nav {
 
 /* Process Section */
 .process-section {
-    padding: 8rem 0;
+    min-height: 100vh;
+    /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+    scroll-margin-top: 80px;
+    /* Adjust for sticky header */
 }
 
 .process-grid {
@@ -256,115 +278,155 @@ nav {
 
 /* Packs Section */
 .packs-section {
-    padding: 8rem 0;
+    min-height: auto;
+    /* Allow content to dictate height, but try to keep it within one screen */
+    padding: 1.5rem 0;
+    scroll-margin-top: 80px;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 5rem;
-}
-
-.section-header h2 {
-    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
+.section-header h2 {
+    font-size: 2rem;
+    /* Even smaller */
+    margin-bottom: 0.2rem;
+}
+
 .section-header p {
-    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
 .packs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem;
+    /* Reduced gap */
 }
 
 .pack-card {
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
-    padding: 3rem;
+    padding: 1rem;
+    /* Ultra compact */
     text-align: center;
     transition: all 0.4s;
     display: flex;
     flex-direction: column;
+    min-height: 480px;
+    /* Ensure consistency but keep it short */
 }
 
 .pack-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: var(--accent-color);
 }
 
 .pack-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    /* Smaller */
+    margin-bottom: 0.5rem;
 }
 
 .pack-card .price {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
     color: var(--accent-color);
+    font-weight: 600;
 }
 
 .pack-card ul {
     list-style: none;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    /* Smaller items */
     flex-grow: 1;
+    text-align: left;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.8rem;
 }
 
 .pack-card ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
-/* About Section */
+.pack-card .btn {
+    padding: 0.8rem 1rem;
+    /* Smaller button */
+    font-size: 0.75rem;
+}
+
+/* About Section Unified */
 .about-section {
-    padding: 8rem 0;
+    padding: 1rem 0;
+    background-color: var(--bg-color);
+    scroll-margin-top: 80px;
+}
+
+.about-unified {
     background-color: var(--surface-color);
-    border-top: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    padding: 3rem 3.5rem;
+    /* Increased top padding (6rem) for more air */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
-.about-text {
-    max-width: 800px;
-    margin: 0 auto 5rem;
+.about-header {
     text-align: center;
-}
-
-.about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--accent-color);
-}
-
-.about-text p {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    /* Reduced from 3rem to pull content up */
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.about-main-text {
+    font-size: 1.05rem;
     color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    /* Reduced from 3rem */
+    text-align: center;
 }
 
 .philosophy-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    gap: 2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    /* Reduced from 3rem */
 }
 
 .philosophy-card {
-    background-color: var(--bg-color);
-    padding: 3rem;
-    border: 1px solid var(--border-color);
-    text-align: left;
+    background-color: rgba(201, 169, 110, 0.05);
+    /* Very subtle gold tint */
+    padding: 2.5rem;
+    border: 1px solid var(--accent-color);
+    /* Full golden border */
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.philosophy-card:hover {
+    transform: scale(1.02);
 }
 
 .philosophy-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     color: var(--accent-color);
-}
-
-.philosophy-card p {
-    color: var(--text-secondary);
 }
 
 /* Modal */
@@ -526,14 +588,37 @@ nav {
 
 /* Contact Section */
 .contact-section {
-    padding: 6rem 0;
+    padding: 4rem 0;
     border-top: 1px solid var(--border-color);
+    scroll-margin-top: 80px;
+    /* Exact header height */
+    min-height: 100vh;
+    /* Full screen to avoid seeing previous section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.contact-info-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
 }
 
 .contact-info h3,
@@ -561,22 +646,88 @@ nav {
 }
 
 .social-icon {
-    width: 50px;
-    height: 50px;
-    border: 1px solid var(--border-color);
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--text-primary);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    border-radius: 12px;
+    /* Rounded square like original icons */
     transition: all 0.3s;
+    border: none;
+    color: white;
+}
+
+.social-icon.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    opacity: 0.85;
+    /* Muted */
+}
+
+.social-icon.tiktok {
+    background-color: #010101;
+    /* Slightly off-black */
+    color: #fff;
+    box-shadow: 1px 1px 0 rgba(255, 0, 80, 0.7), -1px -1px 0 rgba(0, 242, 234, 0.7);
+}
+
+.social-icon.facebook {
+    background-color: #3b5998;
+    /* Muted Facebook blue */
+}
+
+.social-icon.whatsapp {
+    background-color: #20b054;
+    /* Muted WhatsApp green */
 }
 
 .social-icon:hover {
-    border-color: var(--accent-color);
+    transform: translateY(-5px) scale(1.05);
+    opacity: 1;
+}
+
+/* Contact Page Specific */
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+    font-size: 4rem;
     color: var(--accent-color);
-    transform: translateY(-5px);
+    margin-bottom: 1rem;
+}
+
+.contact-page-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background-color: var(--surface-color);
+    padding: 3.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.contact-form-container h3 {
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* WhatsApp Floating Button */
@@ -586,20 +737,27 @@ nav {
     right: 30px;
     background-color: #25d366;
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    width: 60px;
+    /* Force circle */
+    height: 60px;
+    border-radius: 50%;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
     transition: transform 0.3s;
 }
 
+.whatsapp-btn span {
+    display: none;
+    /* Hide text as requested */
+}
+
 .whatsapp-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 footer {
@@ -630,8 +788,34 @@ footer {
         padding: 1rem 0;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--surface-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        /* Override previous display: none if any */
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
     }
 
     .hero {
@@ -653,32 +837,201 @@ footer {
         margin-right: auto;
     }
 
-    .packs-grid,
-    .process-grid,
-    .contact-grid,
-    .philosophy-grid {
-        grid-template-columns: 1fr;
+    .packs-section {
+        padding: 0.5rem 0;
+        /* Minimal vertical padding */
+        min-height: auto;
     }
 
-    .process-section,
-    .packs-section,
-    .about-section,
-    .checkout-section {
-        padding: 4rem 0;
+    .section-header {
+        margin-bottom: 0.5rem !important;
+        /* Extremely tight margin */
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem !important;
+        /* Smaller title */
+        margin-bottom: 0 !important;
+    }
+
+    .section-header p {
+        font-size: 0.8rem;
+    }
+
+    .process-section {
+        padding: 1.5rem 0;
+        /* Tighter padding to pull content up */
+        min-height: auto;
+    }
+
+    .contact-section {
+        min-height: calc(100vh - 80px);
+        /* Fill screen excluding header */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Push action box to bottom */
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        scroll-margin-top: 80px;
+    }
+
+    .contact-info-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .contact-info-top p {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        /* Reduced gap */
+    }
+
+    .process-card i {
+        font-size: 1.8rem;
+        /* Smaller icons on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .process-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .process-card p {
+        font-size: 0.9rem;
     }
 
     .modal-content {
-        width: 90%;
-        margin: 10% auto;
-        padding: 2rem;
+        width: 95%;
+        /* More width on small screens */
+        margin: 5% auto;
+        padding: 1.5rem;
     }
 
-    .checkout-grid {
+    .about-unified {
+        padding: 0.75rem 1rem;
+        /* Ultra-tight padding */
+    }
+
+    .about-header h2 {
+        font-size: 1.3rem;
+        /* Even smaller title */
+        margin-bottom: 0.2rem;
+    }
+
+    .about-main-text {
+        font-size: 0.8rem;
+        /* Smaller body text */
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+
+    .about-main-text p {
+        margin-bottom: 0.5rem;
+    }
+
+    .philosophy-grid {
         grid-template-columns: 1fr;
+        padding-top: 0.75rem;
+        gap: 0.75rem;
     }
 
-    .checkout-summary {
-        order: -1;
+    .philosophy-card {
+        padding: 0.75rem;
+    }
+
+    .philosophy-card h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .philosophy-card p {
+        font-size: 0.75rem;
+    }
+
+    .pack-card {
+        padding: 0.5rem;
+        /* Ultra-tight padding */
+        min-height: auto !important;
+        /* Remove min-height to save space */
+    }
+
+    .pack-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .pack-card .price {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .pack-card ul {
+        margin-bottom: 0.5rem !important;
+        padding-top: 0.5rem !important;
+    }
+
+    .pack-card .btn {
+        padding: 0.6rem 0.8rem !important;
+        /* Smaller button */
+        font-size: 0.7rem !important;
+    }
+
+    /* Ensure social icons keep colors */
+    .social-icon.instagram {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+    }
+
+    .social-icon.tiktok {
+        background-color: #010101 !important;
+    }
+
+    .social-icon.facebook {
+        background-color: #3b5998 !important;
+    }
+
+    .social-icon.whatsapp {
+        background-color: #20b054 !important;
+    }
+
+    /* Compact contact spacing on mobile */
+    .social-links-footer {
+        margin-top: 2rem !important;
+    }
+
+    .contact-action-box {
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .contact-action-box p {
+        margin-bottom: 1.5rem !important;
+        font-size: 0.9rem;
+    }
+
+    .contact-action-box .btn-primary {
+        width: 100%;
+        max-width: none;
+        padding: 1.2rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        /* Square-ish like the image */
     }
 }
 

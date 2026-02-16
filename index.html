@@ -30,9 +30,14 @@
                 <li><a href="#nosotros">Quiénes Somos</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <div class="cart-icon" onclick="toggleCart()" aria-label="Abrir carrito de compras" role="button">
-                <i class="fa-solid fa-basket-shopping"></i>
-                <span class="cart-count">0</span>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="toggleCart()" aria-label="Abrir carrito de compras" role="button">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -90,20 +95,17 @@
         </section>
 
         <section id="nosotros" class="about-section container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Quiénes Somos</h2>
+            <div class="about-unified">
+                <div class="about-header">
+                    <h2>Nuestra Historia</h2>
+                </div>
+                <div class="about-main-text">
                     <p>Somos un emprendimiento familiar nacido del esfuerzo, la visión y las ganas de hacer las cosas
                         bien. Detectamos que muchas familias necesitan acceder a productos frescos y de calidad a
-                        precios justos, sin perder tiempo ni pagar de más. A partir de esa necesidad decidimos crear un
-                        servicio cercano, confiable y transparente, enfocado en llevar frutas, verduras y productos
-                        naturales seleccionados directamente a cada hogar.</p>
-                    <p>Trabajamos con responsabilidad, dedicación y compromiso en cada etapa del proceso, desde la
-                        selección de los productos hasta la entrega final. Cada pedido que armamos lo hacemos como si
-                        fuera para nuestra propia casa.</p>
-                    <p>Creemos en el trato humano, en la confianza y en el crecimiento sostenido. Nuestro objetivo es
-                        construir relaciones a largo plazo con cada familia que nos elige, ofreciendo siempre calidad,
-                        precio justo y un servicio que marque la diferencia.</p>
+                        precios justos, sin perder tiempo ni pagar de más.</p>
+                    <p>A partir de esa necesidad decidimos crear un servicio cercano, confiable y transparente,
+                        enfocándonos en llevar lo mejor del campo directamente a cada hogar. Trabajamos con la
+                        responsabilidad de quien prepara el pedido para su propia casa.</p>
                 </div>
                 <div class="philosophy-grid">
                     <div class="philosophy-card">
@@ -195,31 +197,38 @@
         </div>
     </section>
 
-    <!-- Contact Info -->
-    <div id="contacto" class="contact-section container">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Vení a visitarnos</h3>
+    <!-- Contact Info (Footer area) -->
+    <section id="contacto" class="contact-section container">
+        <div class="contact-info-top">
+            <h3>Vení a visitarnos</h3>
+            <div class="contact-details">
                 <p><i class="fa-solid fa-location-dot"></i> Labarden 4252, Tortuguitas, Argentina</p>
                 <p><i class="fa-solid fa-phone"></i> 11 6177 1376</p>
                 <p><i class="fa-solid fa-envelope"></i> huertaurbana@gmail.com.ar</p>
             </div>
+
             <div class="social-links-footer">
                 <h3>Seguinos en redes</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="social-icon" title="WhatsApp Business"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon instagram" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-icon whatsapp" title="WhatsApp Business"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="contact-action-box">
+            <p>¿Tenés una consulta específica?</p>
+            <a href="contacto.html" class="btn btn-primary">Abrir Formulario de Contacto</a>
+        </div>
+    </section>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/5491161771376" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/5491161771376" class="whatsapp-btn" target="_blank" aria-label="Hacer pedido por WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
-        <span>Hacer pedido por WhatsApp</span>
     </a>
 
     <footer>
