@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huerta Urbana | Combos Semanales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo-group">
+                <div class="logo">HUERTA<span>URBANA</span></div>
+                <div class="logo-subtitle">Compromiso familiar<br>en cada entrega</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#packs">Combos</a></li>
+                <li><a href="#proceso">Cómo Trabajamos</a></li>
+                <li><a href="#nosotros">Quiénes Somos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="logistics-banner">
+            <div class="container">
+                📍 Envíos a todo el <strong>Partido de Pilar</strong> y Zona Norte - Repartos: Martes y Jueves
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Simplificamos tu vida, <br>elegimos por vos.</h1>
+                <p class="hero-highlight">"Cada pedido que armamos lo hacemos como si fuera para nuestra propia casa."
+                </p>
+                <p>La mejor selección artesanal de frutas y verduras premium en Zona Norte. Calidad y frescura directo
+                    del campo a tu hogar.</p>
+                <a href="#packs" class="btn btn-primary">Ver Combos Semanales</a>
+            </div>
+        </section>
+
+        <section id="proceso" class="process-section container">
+            <div class="section-header">
+                <h2>Cómo Trabajamos</h2>
+                <p>Tu mesa, con lo mejor del campo en 3 simples pasos.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>Selección Premium</h3>
+                    <p>Elegimos por vos la mejor verdura de estación. Calidad artesanal en cada kilo.</p>
+                </div>
+                <div class="process-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <h3>Directo a tu Casa</h3>
+                    <p>Sin intermediarios ni demoras. Del campo a tu puerta para que no tengas que salir.</p>
+                </div>
+                <div class="process-card">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <h3>Precio Justo</h3>
+                    <p>Al simplificar la elección y logística, te garantizamos el mejor precio del mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="packs" class="packs-section container">
+            <div class="section-header">
+                <h2>Combos Semanales</h2>
+                <p>Elegí tu combo ideal. Todo se pesa por kilo para garantizar el mejor precio.</p>
+            </div>
+            <div class="packs-grid" id="packs-container">
+                <!-- Packs will be loaded here via JS -->
+            </div>
+        </section>
+
+        <section id="nosotros" class="about-section container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Quiénes Somos</h2>
+                    <p>Somos un emprendimiento familiar nacido del esfuerzo, la visión y las ganas de hacer las cosas
+                        bien. Detectamos que muchas familias necesitan acceder a productos frescos y de calidad a
+                        precios justos, sin perder tiempo ni pagar de más. A partir de esa necesidad decidimos crear un
+                        servicio cercano, confiable y transparente, enfocado en llevar frutas, verduras y productos
+                        naturales seleccionados directamente a cada hogar.</p>
+                    <p>Trabajamos con responsabilidad, dedicación y compromiso en cada etapa del proceso, desde la
+                        selección de los productos hasta la entrega final. Cada pedido que armamos lo hacemos como si
+                        fuera para nuestra propia casa.</p>
+                    <p>Creemos en el trato humano, en la confianza y en el crecimiento sostenido. Nuestro objetivo es
+                        construir relaciones a largo plazo con cada familia que nos elige, ofreciendo siempre calidad,
+                        precio justo y un servicio que marque la diferencia.</p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <h3>🌱 Nuestra Misión</h3>
+                        <p>Brindar productos frescos y saludables con un servicio confiable y cercano, facilitando la
+                            compra semanal de cada hogar.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h3>🚀 Nuestra Visión</h3>
+                        <p>Consolidarnos como una empresa familiar referente en la zona, reconocida por su calidad,
+                            compromiso y atención personalizada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Personalización -->
+    <div id="customize-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Personalizar Combo</h2>
+            <p id="modal-desc">Agrega o quita ítems manteniendo el espíritu del combo.</p>
+            <div id="modal-items-list" class="items-list">
+                <!-- Items list loaded via JS -->
+            </div>
+            <div class="modal-footer">
+                <div class="modal-total">Subtotal: <span id="modal-total-price">$0</span></div>
+                <button class="btn btn-primary" onclick="addToCartFromModal()">Confirmar Combo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito Lateral -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Pedido Actual</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <!-- Cart items loaded via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0</span>
+            </div>
+            <div class="summary-line">
+                <span>Envío (Pilar/Z. Norte)</span>
+                <span id="cart-shipping">$0</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total Final</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="goToCheckout()">Reservar vía Transferencia</button>
+        </div>
+    </div>
+
+    <!-- Sección de Checkout -->
+    <section id="checkout" class="checkout-section container" style="display: none;">
+        <div class="checkout-grid">
+            <div class="payment-form">
+                <h2>Finalizar Reserva</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">Recibirás los datos para la transferencia
+                    y coordinaremos el envío por WhatsApp.</p>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label>Nombre y Apellido</label>
+                        <input type="text" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección de Entrega</label>
+                        <input type="text" placeholder="Calle, número, barrio" required>
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp</label>
+                        <input type="tel" placeholder="11 0000 0000" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Confirmar Pedido</button>
+                    <button type="button" class="btn btn-outline btn-block" onclick="hideCheckout()">Volver al
+                        Inicio</button>
+                </form>
+            </div>
+            <div class="checkout-summary" id="checkout-summary-container">
+                <h3>Resumen</h3>
+                <div id="checkout-items"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <div id="contacto" class="contact-section container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Vení a visitarnos</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Labarden 4252, Tortuguitas, Argentina</p>
+                <p><i class="fa-solid fa-phone"></i> 11 6177 1376</p>
+                <p><i class="fa-solid fa-envelope"></i> huertaurbana@gmail.com.ar</p>
+            </div>
+            <div class="social-links-footer">
+                <h3>Seguinos en redes</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-icon" title="WhatsApp Business"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5491161771376" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>Hacer pedido por WhatsApp</span>
+    </a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">HUERTA<span>URBANA</span></div>
+                <p>&copy; 2024 Huerta Urbana - Tortuguitas, Argentina.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
